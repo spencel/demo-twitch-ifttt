@@ -21,7 +21,7 @@ var options = {
 	},
 	identity: {
 		// Use the bot user account
-		username: 'AnArmored3LeggedGuardCow',
+		username: process.env.BOT_USERNAME,
 		password: process.env.TWITCH_CHAT_OAUTH_PASSWORD
 	},
 	// List of channels to join
