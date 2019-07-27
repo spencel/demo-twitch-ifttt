@@ -32,7 +32,7 @@ var options = {
     password: process.env.TWITCH_CHAT_OAUTH_PASSWORD
   },
   // List of channels to join
-  channels: ['anarmored3leggedguardcow', 'secretreagent', 'topgunn7' // other channels
+  channels: ['anarmored3leggedguardcow', 'secretreagent', 'itsmeimalex' // other channels
   ] // Create a new tmi client for the bot
 
 };
