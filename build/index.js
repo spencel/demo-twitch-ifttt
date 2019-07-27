@@ -6,11 +6,14 @@ var _tmi = _interopRequireDefault(require("tmi.js"));
 
 var _axios = _interopRequireDefault(require("axios"));
 
+var _http = _interopRequireDefault(require("http"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 // Put sensitive authorization keys and other environment variables in a file that is not pushed to a git repository
 // Get messages from twitch chat
 // Send and receive http requests and responses
+// Heroku requires a server
 // Get environment veriables
 // For example: process.env.MY_ENVIRONMENT_VARIABLE
 _dotenv["default"].config();
@@ -77,4 +80,11 @@ tmiClient.on('cheer', function (channel, userstate, message) {
   })["catch"](function (error) {
     console.log('error'); //console.log( error )
   });
-});
+}); // Heroku will require the app to host a server or else will shut the app down.
+// If there is a PORT environment variable, then the environment is Heroku and the server should be started and listen at that port.
+
+if (process.env.PORT) {
+  console.log("Listening on port ".concat(process.env.PORT));
+
+  _http["default"].createServer(function (request, reponse) {}).listen(process.env.PORT);
+}

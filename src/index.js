@@ -4,6 +4,8 @@ import dotenv from 'dotenv'
 import tmi from 'tmi.js'
 // Send and receive http requests and responses
 import axios from 'axios'
+// Heroku requires a server
+import http from 'http'
 
 // Get environment veriables
 // For example: process.env.MY_ENVIRONMENT_VARIABLE
@@ -86,5 +88,13 @@ tmiClient.on( 'cheer', ( channel, userstate, message ) => {
 			//console.log( error )
 		})
 
-
 })
+
+
+// Heroku will require the app to host a server or else will shut the app down.
+
+// If there is a PORT environment variable, then the environment is Heroku and the server should be started and listen at that port.
+if ( process.env.PORT ) {
+	console.log( `Listening on port ${process.env.PORT}` )
+	http.createServer( ( request, reponse ) => {}).listen( process.env.PORT )	
+}
