@@ -28,7 +28,7 @@ var options = {
 	channels: [
 		'anarmored3leggedguardcow',
 		'secretreagent',
-		'topgunn7'
+		'itsmeimalex'
 		// other channels
 	]
 }
