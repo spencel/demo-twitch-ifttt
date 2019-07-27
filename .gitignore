@@ -1,0 +1,5 @@
+# Ignore file(s) containing sensitive passwords and keys
+*.env
+
+# Ignore node modules, these are downloaded automatically via "npm install" cli command
+node_modules/

@@ -1,0 +1,30 @@
+{
+  "name": "demo-twitch-ifttt",
+  "version": "0.0.0",
+  "description": "A demo for integrating Twitch and IFTTT.",
+  "main": "index.js",
+  "scripts": {
+    "devstart": "npx babel-node ./src/index.js",
+    "build": "npx babel ./src/index.js -d ./build",
+    "start": "node ./build/index.js",
+    "init-start": "npm install && npm run build && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/spencel/demo-twitch-ifttt.git"
+  },
+  "author": "Spencer Lank",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/spencel/demo-twitch-ifttt#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "dotenv": "^8.0.0",
+    "tmi.js": "^1.4.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5"
+  }
+}
