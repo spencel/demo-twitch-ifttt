@@ -98,3 +98,27 @@ if ( process.env.PORT ) {
 	console.log( `Listening on port ${process.env.PORT}` )
 	http.createServer( ( request, reponse ) => {}).listen( process.env.PORT )	
 }
+
+let color = 0
+setInterval( () => {
+	if ( color == 0 ) {
+		color = 1
+		console.log( 'color blue' )
+	} else {
+		color = 0
+		console.log( 'color red' )
+	}
+	axios.post( `https://maker.ifttt.com/trigger/change_color_${color}/with/key/${process.env.TFTTT_API_KEY}`, {
+			'value1': undefined,
+			'value2': undefined,
+			'value3': undefined
+		})
+		.then( res => {
+			// console.log( `statusCode: ${res.statusCode}`)
+		})
+		.catch( error => {
+			console.log( 'error' )
+			//console.log( error )
+		})	
+}, 6000 )
+

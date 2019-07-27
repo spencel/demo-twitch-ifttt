@@ -7,7 +7,8 @@
     "devstart": "npx babel-node ./src/index.js",
     "build": "npx babel ./src/index.js -d ./build",
     "start": "node ./build/index.js",
-    "init-start": "npm install && npm run build && npm start"
+    "init-start": "npm install && npm run build && npm start",
+    "color":"npx babel-node ./src/kasa-bulb-change-color.js"
   },
   "repository": {
     "type": "git",
